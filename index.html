@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Feliz Aniversário Wanessa 🎉</title>
+    <script>
+        window.tailwind = window.tailwind || {};
+        window.tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'wanessa-pink': '#ffb6c1',
+                        'wanessa-yellow': '#ffe08a',
+                        'wanessa-white': '#fffdf8'
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --wanessa-pink: #ffb6c1;
+            --wanessa-yellow: #ffe08a;
+            --wanessa-white: #fffdf8;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--wanessa-pink) 0%, var(--wanessa-white) 50%, var(--wanessa-yellow) 100%) !important;
+            color: #000;
+        }
+
+        .bg-wanessa-pink {
+            background-color: var(--wanessa-pink) !important;
+        }
+
+        .bg-wanessa-yellow {
+            background-color: var(--wanessa-yellow) !important;
+        }
+
+        .bg-wanessa-white {
+            background-color: var(--wanessa-white) !important;
+        }
+
+        button.bg-wanessa-pink {
+            border: none;
+        }
+
+        .header-highlight {
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+        }
+
+        .from-wanessa-pink {
+            --tw-gradient-from: var(--wanessa-pink) !important;
+        }
+
+        .via-wanessa-white {
+            --tw-gradient-stops: var(--wanessa-white) !important;
+        }
+
+        .to-wanessa-yellow {
+            --tw-gradient-to: var(--wanessa-yellow) !important;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        .fade-enter {
+            opacity: 0;
+            transform: scale(0.98);
+        }
+
+        .fade-enter-active {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity .6s, transform .6s;
+        }
+
+        .fade-exit {
+            opacity: 1;
+        }
+
+        .fade-exit-active {
+            opacity: 0;
+            transition: opacity .6s;
+        }
+
+        .locked {
+            pointer-events: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-wanessa-pink via-wanessa-white to-wanessa-yellow text-black">
+    <div id="modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+        <div class="bg-white rounded-2xl p-8 w-full max-w-md shadow-2xl text-center">
+            <h2 class="text-2xl font-bold mb-4">Quem é o ser mais TOP, legal, lindo, maravilhoso desse mundo?</h2>
+            <input id="name-input" type="text" placeholder="Digite o nome..."
+                class="w-full border border-gray-300 rounded-md px-4 py-3 mb-4 text-lg" />
+            <div class="flex gap-3 justify-center">
+                <button id="submit-btn"
+                    class="px-6 py-2 rounded-md bg-wanessa-pink text-black font-semibold">Confirmar</button>
+                <button id="skip-btn" class="px-6 py-2 rounded-md bg-gray-100">Cancelar</button>
+            </div>
+            <p class="mt-4 text-sm text-gray-500">Dica: não se preocupe com maiúsculas ou minúsculas — escreva só o
+                nome.</p>
+        </div>
+    </div>
+    <main id="main" class="transition-all duration-500 ease-out filter blur-lg locked p-8">
+        <header class="mb-8">
+            <h1 class="text-center font-extrabold text-5xl md:text-8xl">Feliz Anversárioooooooo!</h1>
+        </header>
+        <section class="max-w-4xl mx-auto mb-8">
+            <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="h-96 md:h-[520px] flex items-center justify-center bg-gray-50">
+                    <img id="carousel-img" src="" alt="foto"
+                        class="max-h-full max-w-full object-contain transition-opacity duration-700" />
+                </div>
+                <button id="prev-btn" aria-label="Anterior"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/30 text-white rounded-full p-3">◀</button>
+                <button id="next-btn" aria-label="Próximo"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/30 text-white rounded-full p-3">▶</button>
+            </div>
+        </section>
+        <section class="max-w-3xl mx-auto bg-white/80 rounded-xl p-6 shadow-inner">
+            <h3 class="font-semibold mb-2">Mensagem boiolinha abaixo:</h3>
+            <div id="message" contenteditable="true"
+                class="min-h-[140px] text-black prose max-w-none focus:outline-none">
+                <p>
+                    Obviamente não irei escrever uma
+                    mensagem boiolinha, pois isso irá diminuir minha aura, mas venho aqui para expressar
+                    minha admiração por você.
+                </p>
+                <p>
+                    Você é esforçada e um exemplo de pessoa a ser seguido. Desejo muitos anos de
+                    vida para você, felicidades, saúde e que continue sendo essa pessoa top.
+                </p>
+                <p>
+                    Dito isso saiba que perdi horas
+                    que eu podia estar jogando ou dormindo para fazer isso aqui!!!😡 Acima você pode ver algumas fotos
+                    que
+                    eu achei nossas (coisa raríssima, pois minha pessoa é tão incrível que não pode ser vista em fotos,
+                    sinta-se privilegiada por ter fotos comigo.). E é isso, espero que no seu dia possa descansar e
+                    fazer coisas legais, beijinhos.
+                </p>
+                <p>PS: Abaixo uma foto minha que exala aura (experimente deixar o mouse em cima):</p>
+            </div>
+
+            <div class="mt-6 text-center">
+                <img id="aura-img" src="images/aura.jpg" alt=""
+                    class="mx-auto mt-4 max-h-64 rounded-xl shadow-lg cursor-pointer" />
+            </div>
+        </section>
+    </main>
+    <script>
+        const images = [
+            "images/image1.jpg",
+            "images/image2.jpg",
+            "images/image3.jpg",
+            "images/image4.jpg",
+        ];
+        const ROTATE_MS = 3000;
+        const modal = document.getElementById('modal');
+        const submitBtn = document.getElementById('submit-btn');
+        const skipBtn = document.getElementById('skip-btn');
+        const nameInput = document.getElementById('name-input');
+        const main = document.getElementById('main');
+        const carouselImg = document.getElementById('carousel-img');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        let currentIndex = 0;
+        let timerId = null;
+        function unlockPage() {
+            modal.style.display = 'none';
+            main.classList.remove('blur-lg', 'locked');
+        }
+        function confettiBurst() {
+            if (typeof confetti === 'function') {
+                confetti({ particleCount: 150, spread: 160, origin: { y: 0.6 } });
+                confetti({ particleCount: 100, spread: 120, origin: { y: 0.4 } });
+            }
+        }
+        function checkNameAndUnlock() {
+            const val = nameInput.value.trim().toLowerCase();
+            if (val === 'rafael') {
+                alert('Óbvio né? Não sei pq demorou pensando.');
+                unlockPage();
+                confettiBurst();
+            } else {
+                alert('Você sabe que sou eu, não tem como errar, mas enfim vou deixar passar...');
+                unlockPage();
+            }
+        }
+        submitBtn.addEventListener('click', checkNameAndUnlock);
+        skipBtn.addEventListener('click', function () { nameInput.value = ''; alert('Ok, vou deixar passar...'); unlockPage(); });
+        nameInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') { checkNameAndUnlock(); } });
+        function showImage(index) {
+            if (!images || images.length === 0) {
+                carouselImg.src = '';
+                carouselImg.alt = 'Nenhuma imagem. Atualize o array `images` no script com os arquivos da pasta images/.';
+                return;
+            }
+            const src = images[index];
+            carouselImg.style.opacity = 0;
+            setTimeout(() => {
+                carouselImg.src = src;
+                carouselImg.alt = `Foto ${index + 1}`;
+                carouselImg.style.opacity = 1;
+            }, 180);
+        }
+        function nextImage() {
+            if (!images || images.length === 0) return;
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+        function prevImage() {
+            if (!images || images.length === 0) return;
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+        prevBtn.addEventListener('click', () => { prevImage(); resetTimer(); });
+        nextBtn.addEventListener('click', () => { nextImage(); resetTimer(); });
+        function startTimer() {
+            if (!images || images.length === 0) return;
+            if (timerId) clearInterval(timerId);
+            timerId = setInterval(nextImage, ROTATE_MS);
+        }
+        function resetTimer() { if (timerId) clearInterval(timerId); startTimer(); }
+        showImage(currentIndex);
+        startTimer();
+        document.addEventListener('DOMContentLoaded', function () { confettiBurst(); });
+    </script>
+
+    <script>
+        (function () {
+            const auraImg = document.getElementById('aura-img');
+            if (!auraImg) return;
+
+            const auraAudio = new Audio('audios/aura.mp3');
+            auraAudio.preload = 'auto';
+            auraAudio.loop = true;
+            auraAudio.volume = 0.8;
+
+            const target = document.getElementById('main') || document.body;
+
+            let audioCtx = null;
+            let analyser = null;
+            let source = null;
+            let rafId = null;
+            let playing = false;
+            let shakeInterval = null;
+
+            function pulseShake() {
+                target.style.transition = 'transform 0.08s ease';
+                const x = (Math.random() * 8) - 10;
+                const y = (Math.random() * 8) - 4;
+                const r = (Math.random() * 2) - 1;
+                target.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg)`;
+                setTimeout(() => { target.style.transform = ''; }, 80);
+            }
+
+            function startPeriodicShake() {
+                if (shakeInterval) return;
+                shakeInterval = setInterval(pulseShake, 480);
+            }
+
+            function stopPeriodicShake() {
+                if (!shakeInterval) return;
+                clearInterval(shakeInterval);
+                shakeInterval = null;
+            }
+
+            function createAudioNodes() {
+                if (audioCtx) return true;
+                try {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    source = audioCtx.createMediaElementSource(auraAudio);
+                    analyser = audioCtx.createAnalyser();
+                    analyser.fftSize = 256;
+                    source.connect(analyser);
+                    analyser.connect(audioCtx.destination);
+                    return true;
+                } catch (e) {
+                    audioCtx = null;
+                    source = null;
+                    analyser = null;
+                    return false;
+                }
+            }
+
+            function detect() {
+                if (!analyser) return;
+                const data = new Uint8Array(analyser.fftSize);
+                analyser.getByteTimeDomainData(data);
+                let sum = 0;
+                for (let i = 0; i < data.length; i++) {
+                    const v = (data[i] - 128) / 128;
+                    sum += v * v;
+                }
+                const rms = Math.sqrt(sum / data.length);
+                if (rms > 0.05) pulseShake();
+                if (playing) rafId = requestAnimationFrame(detect);
+            }
+
+            function startAnalyser() {
+                if (!createAudioNodes()) {
+                    startPeriodicShake();
+                    return;
+                }
+                if (rafId) return;
+                rafId = requestAnimationFrame(detect);
+            }
+
+            function stopAnalyser() {
+                if (rafId) {
+                    cancelAnimationFrame(rafId);
+                    rafId = null;
+                }
+            }
+
+            async function tryPlay() {
+                try {
+                    if (audioCtx && audioCtx.state === 'suspended') await audioCtx.resume();
+                } catch (e) { }
+                const playPromise = auraAudio.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        playing = true;
+                        startAnalyser();
+                    }).catch(() => {
+                        playing = false;
+                        startPeriodicShake();
+                    });
+                } else {
+                    playing = true;
+                    startAnalyser();
+                }
+            }
+
+            auraImg.addEventListener('mouseenter', async () => {
+                createAudioNodes();
+                await tryPlay();
+            });
+
+            auraImg.addEventListener('mouseleave', () => {
+                auraAudio.pause();
+                auraAudio.currentTime = 0;
+                playing = false;
+                stopAnalyser();
+                stopPeriodicShake();
+                target.style.transform = '';
+            });
+
+            auraImg.addEventListener('click', async () => {
+                if (playing) {
+                    auraAudio.pause();
+                    auraAudio.currentTime = 0;
+                    playing = false;
+                    stopAnalyser();
+                    stopPeriodicShake();
+                    target.style.transform = '';
+                } else {
+                    createAudioNodes();
+                    await tryPlay();
+                }
+            });
+
+            auraImg.addEventListener('touchstart', async (e) => {
+                e.preventDefault();
+                if (playing) {
+                    auraAudio.pause();
+                    auraAudio.currentTime = 0;
+                    playing = false;
+                    stopAnalyser();
+                    stopPeriodicShake();
+                    target.style.transform = '';
+                } else {
+                    createAudioNodes();
+                    await tryPlay();
+                }
+            }, { passive: false });
+        })();
+    </script>
+</body>
+
+</html>
